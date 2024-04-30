@@ -1,15 +1,15 @@
-import type {Config} from 'jest';
 
-const config: Config = {
+const config = {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   coverageDirectory: "coverage",
-  testEnvironment: "node",
+  testEnvironment: "jest-environment-node",
   transform: {
     '.+\\.ts$': 'ts-jest',
-  }
-  //collectCoverage: true,
-  //coverageProvider: "v8",
+  },
+  // collectCoverage: true,
+  // coverageProvider: "v8",
 };
 
 export default config;
+
