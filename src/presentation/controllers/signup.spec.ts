@@ -1,7 +1,6 @@
 import { SignUpController } from "./signup";
 
 describe('SignUpController', () => {
-
   //teste de validação de dados sem o Name
   test('Should return 400 if no name is provided', () => {
     const sut = new SignUpController();
