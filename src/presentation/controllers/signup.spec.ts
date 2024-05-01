@@ -1,5 +1,5 @@
 import { SignUpController } from "./signup";
-import { MissingParamsErrors } from "../errors/missing-params-errors";
+import { MissingParamError } from "../errors/missing-params-errors";
 
 
 describe('SignUpController', () => {
@@ -15,7 +15,7 @@ describe('SignUpController', () => {
     }
     const httpResponse = sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(new MissingParamsErrors("name"));
+    expect(httpResponse.body).toEqual(new MissingParamError("name"));
   });
 
   //teste de validação de dados sem o Email
@@ -30,6 +30,6 @@ describe('SignUpController', () => {
     }
     const httpResponse = sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(new MissingParamsErrors("email"));
+    expect(httpResponse.body).toEqual(new MissingParamError("email"));
   });
 })
